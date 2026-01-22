@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Swap Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Crypto Swap Calculator</h1>
+            <div class="swap-container">
+                <div class="input-group">
+                    <label>From</label>
+                    <div class="token-input">
+                        <select id="fromToken" class="token-select">
+                            <option value="bitcoin" data-image="https://assets.coingecko.com/coins/images/1/small/bitcoin.png">Bitcoin (BTC)</option>
+                            <option value="ethereum" data-image="https://assets.coingecko.com/coins/images/279/small/ethereum.png">Ethereum (ETH)</option>
+                            <option value="binancecoin" data-image="https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png">BNB</option>
+                            <option value="ripple" data-image="https://assets.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png">XRP</option>
+                            <option value="cardano" data-image="https://assets.coingecko.com/coins/images/975/small/cardano.png">Cardano (ADA)</option>
+                            <option value="solana" data-image="https://assets.coingecko.com/coins/images/4128/small/solana.png">Solana (SOL)</option>
+                            <option value="dogecoin" data-image="https://assets.coingecko.com/coins/images/5/small/dogecoin.png">Dogecoin (DOGE)</option>
+                            <option value="polkadot" data-image="https://assets.coingecko.com/coins/images/12171/small/polkadot.png">Polkadot (DOT)</option>
+                            <option value="tron" data-image="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png">TRON (TRX)</option>
+                            <option value="chainlink" data-image="https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png">Chainlink (LINK)</option>
+                            <option value="polygon" data-image="https://assets.coingecko.com/coins/images/4713/small/matic-token-icon.png">Polygon (MATIC)</option>
+                            <option value="tether" data-image="https://assets.coingecko.com/coins/images/325/small/Tether.png">Tether (USDT)</option>
+                            <option value="usd-coin" data-image="https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png">USD Coin (USDC)</option>
+                            <option value="binance-usd" data-image="https://assets.coingecko.com/coins/images/9576/small/BUSD.png">BUSD</option>
+                            <option value="avalanche-2" data-image="https://assets.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png">Avalanche (AVAX)</option>
+                            <option value="uniswap" data-image="https://assets.coingecko.com/coins/images/12504/small/uniswap-uni.png">Uniswap (UNI)</option>
+                            <option value="shiba-inu" data-image="https://assets.coingecko.com/coins/images/11939/small/shiba.png">SHIBA INU (SHIB)</option>
+                            <option value="litecoin" data-image="https://assets.coingecko.com/coins/images/2/small/litecoin.png">Litecoin (LTC)</option>
+                            <option value="bitcoin-cash" data-image="https://assets.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png">Bitcoin Cash (BCH)</option>
+                            <option value="stellar" data-image="https://assets.coingecko.com/coins/images/100/small/Stellar_symbol_black_RGB.png">Stellar (XLM)</option>
+                        </select>
+                        <input type="number" id="fromAmount" placeholder="0.00">
+                    </div>
+                </div>
+                
+                <button id="swapButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </button>
+
+                <div class="input-group">
+                    <label>To</label>
+                    <div class="token-input">
+                        <select id="toToken" class="token-select">
+                            <option value="ethereum" data-image="https://assets.coingecko.com/coins/images/279/small/ethereum.png">Ethereum (ETH)</option>
+                            <option value="bitcoin" data-image="https://assets.coingecko.com/coins/images/1/small/bitcoin.png">Bitcoin (BTC)</option>
+                            <option value="binancecoin" data-image="https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png">BNB</option>
+                            <option value="ripple" data-image="https://assets.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png">XRP</option>
+                            <option value="cardano" data-image="https://assets.coingecko.com/coins/images/975/small/cardano.png">Cardano (ADA)</option>
+                            <option value="solana" data-image="https://assets.coingecko.com/coins/images/4128/small/solana.png">Solana (SOL)</option>
+                            <option value="dogecoin" data-image="https://assets.coingecko.com/coins/images/5/small/dogecoin.png">Dogecoin (DOGE)</option>
+                            <option value="polkadot" data-image="https://assets.coingecko.com/coins/images/12171/small/polkadot.png">Polkadot (DOT)</option>
+                            <option value="tron" data-image="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png">TRON (TRX)</option>
+                            <option value="chainlink" data-image="https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png">Chainlink (LINK)</option>
+                            <option value="polygon" data-image="https://assets.coingecko.com/coins/images/4713/small/matic-token-icon.png">Polygon (MATIC)</option>
+                            <option value="tether" data-image="https://assets.coingecko.com/coins/images/325/small/Tether.png">Tether (USDT)</option>
+                            <option value="usd-coin" data-image="https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png">USD Coin (USDC)</option>
+                            <option value="binance-usd" data-image="https://assets.coingecko.com/coins/images/9576/small/BUSD.png">BUSD</option>
+                            <option value="avalanche-2" data-image="https://assets.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png">Avalanche (AVAX)</option>
+                            <option value="uniswap" data-image="https://assets.coingecko.com/coins/images/12504/small/uniswap-uni.png">Uniswap (UNI)</option>
+                            <option value="shiba-inu" data-image="https://assets.coingecko.com/coins/images/11939/small/shiba.png">SHIBA INU (SHIB)</option>
+                            <option value="litecoin" data-image="https://assets.coingecko.com/coins/images/2/small/litecoin.png">Litecoin (LTC)</option>
+                            <option value="bitcoin-cash" data-image="https://assets.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png">Bitcoin Cash (BCH)</option>
+                            <option value="stellar" data-image="https://assets.coingecko.com/coins/images/100/small/Stellar_symbol_black_RGB.png">Stellar (XLM)</option>
+                        </select>
+                        <div id="result" class="result">0.000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
