@@ -13,7 +13,6 @@ body {
     color: #fff;
 }
 
-/* Main wrapper */
 .container {
     width: 100%;
     flex: 1;
@@ -78,11 +77,10 @@ label {
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* FIXED TOKEN SELECT ICON STYLE */
 .token-select {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
-    padding: 1rem 2.5rem 1rem 3rem; /* space for icon */
+    padding: 1rem 2.5rem 1rem 3rem; 
     border-radius: 12px;
     color: white;
     font-size: 1.2rem;
@@ -90,7 +88,7 @@ label {
     appearance: none;
     min-width: 250px;
 
-    background-repeat: no-repeat;   /* prevent repeating icons */
+    background-repeat: no-repeat;   
     background-position: 10px center;
     background-size: 22px;
 }
@@ -124,7 +122,6 @@ input[type="number"]::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Remove arrows in Chrome */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -165,7 +162,6 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 100%;
 }
 
-/* Footer */
 .footer {
     text-align: center;
     padding: 15px 10px;
@@ -173,7 +169,6 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 14px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
@@ -205,7 +200,6 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 }
 
-/* Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -216,3 +210,4 @@ input[type="number"]::-webkit-outer-spin-button {
         transform: translateY(0);
     }
 }
+
