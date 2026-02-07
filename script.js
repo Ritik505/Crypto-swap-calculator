@@ -81,4 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTokenSelectImage(toToken);
         calculateSwap();
     });
+
 }); 
+
+ document.getElementById("year").textContent = new Date().getFullYear();
