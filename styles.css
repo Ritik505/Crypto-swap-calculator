@@ -9,16 +9,14 @@ body {
     background: linear-gradient(135deg, #1e1e2e, #2d2d44);
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     color: #fff;
-    padding: 0;
-    margin: 0;
 }
 
+/* Main wrapper */
 .container {
     width: 100%;
-    min-height: 100vh;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +33,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     max-width: 1200px;
+    animation: fadeIn 0.5s ease-out;
 }
 
 h1 {
@@ -42,7 +41,6 @@ h1 {
     margin-bottom: 3rem;
     font-size: 2rem;
     font-weight: 600;
-    color: #fff;
 }
 
 .swap-container {
@@ -73,33 +71,33 @@ label {
     gap: 2rem;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
 }
 
+.token-input:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* FIXED TOKEN SELECT ICON STYLE */
 .token-select {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
-    padding: 1rem 3.5rem 1rem 3.5rem;
+    padding: 1rem 2.5rem 1rem 3rem; /* space for icon */
     border-radius: 12px;
     color: white;
     font-size: 1.2rem;
     cursor: pointer;
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-position: 8px center, calc(100% - 8px) center;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 24px, 12px;
     min-width: 250px;
+
+    background-repeat: no-repeat;   /* prevent repeating icons */
+    background-position: 10px center;
+    background-size: 22px;
 }
 
 .token-select option {
     background-color: #1e1e2e;
     color: white;
-    padding: 12px;
-}
-
-.token-select::-ms-expand {
-    display: none;
 }
 
 .token-select:focus {
@@ -114,14 +112,23 @@ input[type="number"] {
     font-size: 2rem;
     width: 100%;
     padding: 0.5rem;
+    -moz-appearance: textfield;
 }
 
 input[type="number"]:focus {
     outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 input[type="number"]::placeholder {
     color: rgba(255, 255, 255, 0.5);
+}
+
+/* Remove arrows in Chrome */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 #swapButton {
@@ -158,62 +165,47 @@ input[type="number"]::placeholder {
     width: 100%;
 }
 
-/* Remove arrow buttons from number input */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px 10px;
+    color: #aaa;
+    font-size: 14px;
 }
 
-/* For Firefox */
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
     }
-    
+
     .card {
         padding: 1.5rem;
     }
-    
+
     h1 {
         font-size: 1.5rem;
         margin-bottom: 2rem;
     }
-    
+
     .token-input {
         padding: 1.5rem;
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .token-select {
         width: 100%;
         min-width: unset;
-        padding: 1rem 2.5rem;
     }
-    
+
     input[type="number"],
     .result {
         font-size: 1.5rem;
     }
 }
 
-/* Dark theme enhancements */
-.token-input:hover {
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.token-select:focus,
-input[type="number"]:focus {
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-/* Add subtle animation */
+/* Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -224,7 +216,3 @@ input[type="number"]:focus {
         transform: translateY(0);
     }
 }
-
-.card {
-    animation: fadeIn 0.5s ease-out;
-} 
